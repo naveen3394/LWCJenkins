@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CPQ Quotation</fullName>
+                <default>false</default>
+                <label>CPQ Quotation</label>
+            </value>
+            <value>
+                <fullName>Proposal / SOW</fullName>
+                <default>false</default>
+                <label>Proposal / SOW</label>
+            </value>
+            <value>
+                <fullName>Purchase Order</fullName>
+                <default>false</default>
+                <label>Purchase Order</label>
+            </value>
+            <value>
+                <fullName>MSA</fullName>
+                <default>false</default>
+                <label>MSA</label>
+            </value>
+            <value>
+                <fullName>Proof of Payment</fullName>
+                <default>false</default>
+                <label>Proof of Payment</label>
+            </value>
+            <value>
+                <fullName>Customer Tax Certificate</fullName>
+                <default>false</default>
+                <label>Customer Tax Certificate</label>
+            </value>
+            <value>
+                <fullName>Vendor Commit Contract</fullName>
+                <default>false</default>
+                <label>Vendor Commit Contract</label>
+            </value>
+            <value>
+                <fullName>Customer Commit Contract</fullName>
+                <default>false</default>
+                <label>Customer Commit Contract</label>
+            </value>
+            <value>
+                <fullName>Other Documents</fullName>
+                <default>false</default>
+                <label>Other Documents</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

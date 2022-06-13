@@ -1,0 +1,52 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-01-2021
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+  Modifications Log 
+  Ver   Date         Author                               Modification
+  1.0   03-31-2021   ChangeMeIn@UserSettingsUnder.SFDoc   Initial Version
+-->
+<template>
+  <template if:false={showme}>
+
+  <div class="slds-p-bottom_large slds-p-left_large" style="width:350px">
+      <lightning-input type="text" label="Enter Account Name" onchange={accName1} ></lightning-input>
+      <lightning-input type="text" label="Enter Account Number" onchange={accNumber1}></lightning-input>
+      <lightning-input type="text" label="Enter Account SLA number" onchange={accountSLANumber1}></lightning-input>
+      <lightning-button label="Search For Account" onclick={handleSearch}></lightning-button>
+
+
+      </div>
+  </template>
+  <template if:true={account}>
+  <div class="c-container custom-box">
+      
+      <lightning-layout multiple-rows>
+             
+           <lightning-layout-item size="12" padding="around-small" small-device-size="3" medium-device-size="6" large-device-size="12" >
+              <div class="header-column">
+                  <p class="field-title " title="Field 1">Account Name</p>
+                  <p>{account.Name}</p>
+              </div>
+      </lightning-layout-item>
+      <lightning-layout-item size="12" padding="around-small" small-device-size="3" medium-device-size="6" large-device-size="12">
+              <div class="header-column">
+                  <p class="field-title" title="Field 2">Account Number</p>
+                  <p >{account.AccountNumber}</p>
+              </div>
+      </lightning-layout-item>
+      <lightning-layout-item size="12" padding="around-small" small-device-size="3" medium-device-size="6" large-device-size="12">
+              <div class="header-column">
+                  <p class="field-title" title="Field 3">SLA Serial Number</p>
+                  <p > {account.SLASerialNumber__c}</p>
+              </div>
+  </lightning-layout-item>
+  <lightning-button variant="brand" label="Open Account" title="Primary action" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+
+</lightning-layout>
+</div>
+  
+  </template>
+</template>

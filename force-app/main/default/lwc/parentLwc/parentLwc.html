@@ -1,0 +1,29 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-05-2021
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+  Modifications Log 
+  Ver   Date         Author                               Modification
+  1.0   04-02-2021   ChangeMeIn@UserSettingsUnder.SFDoc   Initial Version
+-->
+<template>
+    <lightning-card title="Getting Data From Child">
+        <p class="slds-p-horizontal_small">
+          <lightning-progress-bar
+            value={progressValue}
+            size="large"
+          ></lightning-progress-bar>
+          <c-child-lwc
+            onprogressvaluechange={hanldeProgressValueChange}
+          ></c-child-lwc>
+        </p>
+
+        
+      </lightning-card>
+      <lightning-card title="Calling child method from Parent">
+        <lightning-button variant="brand" label="Submit" onclick={handleClick}>
+        </lightning-button>
+      </lightning-card>
+</template>

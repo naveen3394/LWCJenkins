@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>Building_Address__c</columns>
+    <columns>CREATEDBY_USER.ALIAS</columns>
+    <columns>City__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Landmark__c</columns>
+    <columns>UPDATEDBY_USER.ALIAS</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>Lift__c</columns>
+    <columns>No_of_floors__c</columns>
+    <columns>Pincode__c</columns>
+    <columns>State__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

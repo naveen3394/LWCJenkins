@@ -1,0 +1,50 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 03-31-2021
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+  Modifications Log 
+  Ver   Date         Author                               Modification
+  1.0   03-30-2021   ChangeMeIn@UserSettingsUnder.SFDoc   Initial Version
+-->
+<template>
+    <template if:true={weatherdata}>
+        <template if:true={weatherdata}>
+            <lightning-card title= {weatherdata.cityName}>
+      <lightning-layout multiple-rows>
+        <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3" padding="around-small">
+            <lightning-card icon-name="standard:topic" title="Current Temperature">
+                  <div class="slds-align_absolute-center color-blue">
+                      <template if:true={weatherdata}>
+                        {weatherdata.cityTemp}
+                      </template>
+                  </div>
+              </lightning-card>
+          </lightning-layout-item>
+          <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3" padding="around-small">
+            <lightning-card icon-name="utility:flow" title="Current Wind Speed">
+                  <div class="slds-align_absolute-center color-grey">
+                      <template if:true={weatherdata}>
+                          {weatherdata.cityWindSpeed}
+                      </template>
+                  </div>
+              </lightning-card>
+          </lightning-layout-item>
+          <lightning-layout-item size="12" small-device-size="6" medium-device-size="4" large-device-size="3" padding="around-small">
+            <lightning-card icon-name="standard:calibration" title="Precipitation">
+                  <div class="slds-align_absolute-center color-green">
+                      <template if:true={weatherdata}>
+                          {weatherdata.cityPrecip}
+                      </template>
+                  </div>
+              </lightning-card>
+          </lightning-layout-item>
+      </lightning-layout>
+      </lightning-card>
+    </template>
+
+    </template>
+
+    
+</template>

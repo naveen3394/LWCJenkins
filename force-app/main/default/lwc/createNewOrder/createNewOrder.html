@@ -1,0 +1,102 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-12-2021
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+  Modifications Log 
+  Ver   Date         Author                               Modification
+  1.0   04-09-2021   ChangeMeIn@UserSettingsUnder.SFDoc   Initial Version
+-->
+<template>
+    <lightning-card title="Create New Order" icon-name="standard:record">
+
+      
+      <!-- <lightning-record-form object-api-name="Order"
+        fields={fields} onsuccess={handleSuccess}>
+    </lightning-record-form> -->
+    <div class="slds-p-around_x-small">
+      <div class="slds-box">  
+
+
+        <lightning-layout multiple-rows>
+          <lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="6" >
+              <div class="custom-box  slds-p-around_small">
+                <c-lwc-lookup lookup-label="Account" object-api-name="Account" icon-name="standard:account"  
+          onrecordselection={onAccountSelection} required></c-lwc-lookup>  
+              </div>
+          </lightning-layout-item>
+          <lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="6" >
+              <div class="custom-box  slds-p-around_small">
+                <lightning-input type="date" name="effectiveDate" value={rec.effectiveDate} label="Order Date" onchange={handleDateChange}  date-style="medium" ></lightning-input>
+
+              </div>
+          </lightning-layout-item>
+          <lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="6" >
+            <div class="custom-box  slds-p-around_small">
+              <template if:true={statusPicklist.data}>
+                <lightning-combobox name="Status" label="Status" required
+                
+                options={statusPicklist.data.values} value={value} onchange={handleStatusChange}>
+                
+            </lightning-combobox>
+            </template>
+            </div>
+        </lightning-layout-item>
+
+        </lightning-layout>
+        
+
+        <lightning-layout multiple-rows>
+          <lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="6" >
+              <div class="custom-box slds-p-around_small">
+               
+   
+          
+          <lightning-input-address
+          address-label="Billing Address"
+          street-label="Street"
+          city-label="City"
+          country-label="Country"
+          province-label="State"
+          postal-code-label="PostalCode"
+         required
+        
+          onchange={handleBillingAddressChange} >
+      </lightning-input-address>
+    </div>
+  </lightning-layout-item>
+  <lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="6" >
+    <div class="custom-box  slds-p-around_small">
+
+      <lightning-input-address
+      address-label="Shipping Address"
+      street-label="Street"
+      city-label="City"
+      country-label="Country"
+      province-label="State"
+      postal-code-label="PostalCode"
+   
+      required
+      onchange={handleShippingAddressChange} >
+  </lightning-input-address>
+
+</div>
+</lightning-layout-item>
+        </lightning-layout>
+
+<!-- <lightning-button label="Save" onclick={handleSave} class="slds-align_absolute-center"></lightning-button>  -->
+          <lightning-button variant="brand" label="Create Order" title="Primary action" onclick={handleSave} class="slds-m-left_x-small slds-align_absolute-center"></lightning-button>
+
+      </div>  
+<!-- 
+      <lightning-input label="Name" value={rec.AccountName} onchange={handleAccountNameChange}></lightning-input>
+      <lightning-input label="Industry" value={rec.Industry} onchange={handleIndChange}></lightning-input>
+      <lightning-input type="Phone" label="Phone" value={rec.Phone} onchange={handlePhnChange}></lightning-input><br/>
+      <lightning-button label="Save" onclick={handleClick}></lightning-button> -->
+  </div>
+
+
+
+     </lightning-card>
+</template>

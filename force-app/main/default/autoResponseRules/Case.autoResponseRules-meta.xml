@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutoResponseRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <autoResponseRule>
+        <fullName>test</fullName>
+        <active>false</active>
+        <ruleEntry>
+            <senderEmail>navin.patil@aethereus.com</senderEmail>
+            <senderName>MUJ support</senderName>
+            <template>unfiled$public/CommunityChangePasswordEmailTemplate</template>
+        </ruleEntry>
+    </autoResponseRule>
+</AutoResponseRules>

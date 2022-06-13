@@ -1,0 +1,86 @@
+{
+  "activeBrandingSetId" : "7bd5e328-35be-4e2c-b223-c43d54c03d76",
+  "customCSS" : "",
+  "developerName" : "byo",
+  "id" : "5cea2a54-4d39-41cb-bfa4-b90a58fa542d",
+  "label" : "Build Your Own (LWR)",
+  "layouts" : {
+    "Inner" : "0f1ce4af-94aa-4008-9e10-7adb040013a2",
+    "ServiceNotAvailable" : "45b18c92-912d-42fb-9882-6a944ca7ecd4"
+  },
+  "type" : "theme",
+  "views" : [ {
+    "componentAttributes" : { },
+    "componentName" : "community_byo:scopedHeaderAndFooter",
+    "id" : "0f1ce4af-94aa-4008-9e10-7adb040013a2",
+    "label" : "Scoped Header and Footer",
+    "regions" : [ {
+      "components" : [ {
+        "componentAttributes" : {
+          "sectionConfig" : "{\"UUID\":\"84ddd6f8-0ba2-4824-ba95-a97e054ef03b\",\"columns\":[{\"UUID\":\"8b5b8d16-787f-4f79-aeb7-7dc1eb687947\",\"columnName\":\"Column 1\",\"columnKey\":\"headerSection\",\"columnWidth\":\"12\",\"seedComponents\":null}]}"
+        },
+        "componentName" : "community_layout:section",
+        "id" : "84ddd6f8-0ba2-4824-ba95-a97e054ef03b",
+        "regions" : [ {
+          "components" : [ {
+            "componentAttributes" : {
+              "richTextValue" : "<ul class=\"navbar-nav\">\n    <li class=\"nav-item\">\n      <a class=\"nav-link\" href=\"#\">Link 1</a>\n    </li>\n    <li class=\"nav-item\">\n      <a class=\"nav-link\" href=\"#\">Link 2</a>\n    </li>\n    <li class=\"nav-item\">\n      <a class=\"nav-link\" href=\"#\">Link 3</a>\n    </li>\n  </ul>\n<br>\n\n<div class=\"container-fluid\">\n  <h3>Basic Navbar Example</h3>\n  <p>A navigation bar is a navigation header that is placed at the top of the page.</p>\n  <p>The navbar-expand-xl|lg|md|sm class determines when the navbar should stack vertically (on extra large, large, medium or small screens).</p>\n</div>"
+            },
+            "componentName" : "community_builder:htmlEditor",
+            "id" : "10790a6e-009c-4eef-a5e3-ef022942def1",
+            "renditionMap" : { },
+            "type" : "component"
+          } ],
+          "id" : "8b5b8d16-787f-4f79-aeb7-7dc1eb687947",
+          "regionLabel" : "Theme Header",
+          "regionName" : "headerSection",
+          "renditionMap" : { },
+          "type" : "region"
+        } ],
+        "renditionMap" : { },
+        "scopedBrandingSetId" : null,
+        "type" : "component"
+      } ],
+      "id" : "28248f38-9412-462e-a9b2-2f31a6e47eb5",
+      "regionName" : "header",
+      "type" : "region"
+    }, {
+      "components" : [ {
+        "componentAttributes" : {
+          "sectionConfig" : "{\"UUID\":\"dcaa471e-7eec-47fc-8df3-fc3a95fb7f10\",\"columns\":[{\"UUID\":\"8e8e8498-a5d0-474f-81f8-4f716d64e9f7\",\"columnName\":\"Column 1\",\"columnKey\":\"footerSection\",\"columnWidth\":\"12\",\"seedComponents\":null}]}"
+        },
+        "componentName" : "community_layout:section",
+        "id" : "dcaa471e-7eec-47fc-8df3-fc3a95fb7f10",
+        "regions" : [ {
+          "id" : "8e8e8498-a5d0-474f-81f8-4f716d64e9f7",
+          "regionLabel" : "Theme Footer",
+          "regionName" : "footerSection",
+          "renditionMap" : { },
+          "type" : "region"
+        } ],
+        "renditionMap" : { },
+        "scopedBrandingSetId" : null,
+        "type" : "component"
+      } ],
+      "id" : "1b04ad53-bcfb-4a63-a20c-7c8023990907",
+      "regionName" : "footer",
+      "type" : "region"
+    } ],
+    "type" : "view"
+  }, {
+    "componentAttributes" : { },
+    "componentName" : "community_layout:simpleThemeLayout",
+    "id" : "45b18c92-912d-42fb-9882-6a944ca7ecd4",
+    "label" : "Service Not Available Theme Layout",
+    "regions" : [ {
+      "id" : "5d5742e8-2544-42a9-bc15-f40ee1ae9fdb",
+      "regionName" : "header",
+      "type" : "region"
+    }, {
+      "id" : "e76d37ca-518c-45b8-bf13-ad38fa058f92",
+      "regionName" : "footer",
+      "type" : "region"
+    } ],
+    "type" : "view"
+  } ]
+}

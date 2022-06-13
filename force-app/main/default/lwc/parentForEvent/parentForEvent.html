@@ -1,0 +1,22 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-02-2021
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+  Modifications Log 
+  Ver   Date         Author                               Modification
+  1.0   04-02-2021   ChangeMeIn@UserSettingsUnder.SFDoc   Initial Version
+-->
+<template>
+
+    <p class="slds-p-horizontal_small">
+
+    <lightning-card title="Getting Data From Child">
+        Text value from Child{textfromchild} <br>
+        Number value from Child{numberfromchild}
+<!-- style="background-color: aquamarine;" onhandleinputchange={handleinputfromchild} -->
+    <c-child-for-event onhandleinputchange={handleinputfromchild} > </c-child-for-event>
+    </lightning-card>
+    </p>
+</template>

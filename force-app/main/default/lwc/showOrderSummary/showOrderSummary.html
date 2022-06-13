@@ -1,0 +1,54 @@
+<template>
+<lightning-card  variant="Narrow"  title="Order Summary" class="slds_box" >
+    
+
+<table class="slds-table slds-table_cell-buffer slds-table_bordered">
+    
+    <tbody>
+        <tr class="slds-hint-parent">
+            <td scope="row"> Order No. </td>
+            <td scope="row">
+                <!-- {order.OrderNumber}
+                 -->
+                </td>
+            
+        </tr>
+        <tr class="slds-hint-parent">
+            <td scope="row"> Customer Name </td>
+            <td scope="row"> 
+                <!-- {order.AccountName}
+                 -->
+                 </td>
+            
+        </tr>
+        <tr class="slds-hint-parent">
+            <td scope="row"> Items in Cart </td>
+            <td scope="row">
+                <!-- {order.Items_In_Cart__c}
+                 -->
+                 </td>
+            
+        </tr>
+        <tr class="slds-hint-parent">
+            <td scope="row"> Gross Total(<span>₹</span>) </td>
+            <td scope="row"> 
+                <!-- {order.TotalAmount}
+                 -->
+                 </td>
+            
+        </tr>
+          <tr class="slds-hint-parent">
+            <td scope="row"> Discount(<span>₹</span>)(10% OFF)</td>
+            <td scope="row"> 
+                
+                <!-- {discountedTotalPrice}
+                 -->
+                </td>
+            
+        </tr>
+        
+    </tbody>
+</table>
+
+</lightning-card>
+</template>

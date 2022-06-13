@@ -1,0 +1,72 @@
+<template>
+	<lightning-card title="Add New Building" icon-name="standard:record">
+
+		<div class="slds-p-around_x-small">
+			<div class="slds-box">
+				<lightning-layout multiple-rows>
+					<lightning-layout-item size="12" small-device-size="12" medium-device-size="6"
+						large-device-size="6">
+						<div class="custom-box slds-p-around_small">
+            				<lightning-input type="text" name="Building Name" label="Building Name" value={getBuildingRecord.Name} onchange={buildingNameChange} required></lightning-input>
+						</div>
+					</lightning-layout-item>
+
+					<lightning-layout-item size="12" small-device-size="12" medium-device-size="6"
+						large-device-size="6">
+						<div class="custom-box slds-p-around_small">
+            				<lightning-input type="text" name="Address" label="Address" value={getBuildingRecord.Building_Address__c} onchange={buildingAddressChange} required></lightning-input>
+						</div>
+					</lightning-layout-item>
+
+					<lightning-layout-item size="12" small-device-size="12" medium-device-size="6"
+						large-device-size="6">
+						<div class="custom-box slds-p-around_small">
+            				<lightning-input type="text" name="City" label="City" value={getBuildingRecord.City__c} onchange={buildingCityChange} required></lightning-input>
+						</div>
+					</lightning-layout-item>
+
+					<lightning-layout-item size="12" small-device-size="12" medium-device-size="6"
+						large-device-size="6">
+						<div class="custom-box slds-p-around_small">
+            				<lightning-input type="text" name="Landmark" label="Landmark" value={getBuildingRecord.Landmark__c} onchange={buildingLandmarkChange} required></lightning-input>
+						</div>
+					</lightning-layout-item>
+
+					<lightning-layout-item size="12" small-device-size="12" medium-device-size="6"
+						large-device-size="6">
+						<div class="custom-box slds-p-around_small">
+            				<lightning-input type="number" name="Floors" label="Floors" value={getBuildingRecord.No_of_floors__c} onchange={buildingNooffloorsChange} required></lightning-input>
+						</div>
+					</lightning-layout-item>
+
+					<lightning-layout-item size="12" small-device-size="12" medium-device-size="6"
+						large-device-size="6">
+						<div class="custom-box slds-p-around_small">
+            				<lightning-input type="number" name="Pincode" label="Pincode" value={getBuildingRecord.Pincode__c} onchange={buildingPincodeChange} required></lightning-input>
+						</div>
+					</lightning-layout-item>
+
+					<lightning-layout-item size="12" small-device-size="12" medium-device-size="6"
+						large-device-size="6">
+						<div class="custom-box slds-p-around_small">
+            				<lightning-input type="text" name="State" label="State" value={getBuildingRecord.State__c} onchange={buildingStateChange} required></lightning-input>
+						</div>
+					</lightning-layout-item>
+
+          <lightning-layout-item size="12" small-device-size="12" medium-device-size="6"
+						large-device-size="6" class="slds-p-top_large">
+						<div class="custom-box slds-p-around_small ">
+					        <lightning-input type="checkbox" name="Lift" label="Lift" value={getBuildingRecord.Lift__c} onchange={buildingLiftChange}>                    
+                  </lightning-input>
+						</div>
+          </lightning-layout-item>
+				</lightning-layout>
+
+				<lightning-button variant="brand" label="Create Flat" title="Primary action" onclick={handleflatSave}
+					class="slds-m-left_x-small slds-align_absolute-center">
+        </lightning-button>
+
+			</div>
+		</div>
+	</lightning-card>
+</template>

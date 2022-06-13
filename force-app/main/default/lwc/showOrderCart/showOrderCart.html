@@ -1,0 +1,75 @@
+<template>
+    <lightning-card  variant="Narrow"  >
+    
+                <template if:true={showcartdata}>
+
+<table class="slds-table slds-table_cell-buffer lwsTablePad slds-table_bordered" border="1"    style="border-collapse:collapse;">
+          <thead>
+            <tr class="slds-line-height_reset ">
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-align_center slds-text-title_bold slds-text-heading_medium" title="Image">Sr. No </div>
+    
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-align_center slds-text-title_bold slds-text-heading_medium" title="Product">Product</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-align_center slds-text-title_bold slds-text-heading_medium" title="Unit Price">Unit Price(<span>₹</span>)</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-align_center slds-text-title_bold slds-text-heading_medium" title="Quantity">Quantity</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-align_center slds-text-title_bold slds-text-heading_medium" title="Total Price">Total Amount</div>
+                
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-align_center slds-text-title_bold slds-text-heading_medium" title="Action">Action</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <template for:each={orderItemList} for:item="orderItem" for:index="indexVar">
+                <tr key={orderItem.Id}>
+                    <td scope="col" >
+                           <div class="slds-text-align_center">                            
+                        <c-serial-number-comp index={indexVar}></c-serial-number-comp></div> 
+                    </td>
+                  
+                    <td scope="col">
+                            <div class="slds-text-align_center">{orderItem.Product2.Name}</div> 
+                    </td>
+                    <td scope="col">
+                        <div class="slds-text-align_center" > <span>₹</span>{orderItem.UnitPrice} </div>
+                    </td>
+                   
+                    <td scope="col" class="slds-p-bottom_x-small" >
+                            <div class="slds-text-align_center">{orderItem.Quantity}</div> 
+
+                    </td>
+                     <td scope="col">
+                        <div class="slds-text-align_center" >{orderItem.TotalPrice}</div>
+                    </td>
+                    <td scope="col">
+<lightning-icon icon-name="utility:clear" size="x-small" alternative-text="Remove Item from Cart"></lightning-icon>
+                    </td>
+                </tr>
+            </template>
+        </tbody>
+    </table>  
+        </template>
+
+
+    </lightning-card>
+
+<template if:false={showcartdata}>
+
+<lightning-card  variant="Narrow"  >
+  
+<img src="https://chillydraji.files.wordpress.com/2015/08/empty_cart.jpeg" >
+There are no items in cart
+</lightning-card>
+
+</template>
+
+</template>

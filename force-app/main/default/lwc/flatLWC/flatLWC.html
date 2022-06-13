@@ -1,0 +1,61 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-12-2021
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+  Modifications Log 
+  Ver   Date         Author                               Modification
+  1.0   04-09-2021   ChangeMeIn@UserSettingsUnder.SFDoc   Initial Version
+-->
+<template>
+    <lightning-card title="Add New Flat" icon-name="standard:record">
+
+    <div class="slds-p-around_x-small">
+      <div class="slds-box">  
+
+
+        <lightning-layout multiple-rows>
+          <lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="6" >
+              <div class="custom-box  slds-p-around_small">
+                <c-lwc-lookup lookup-label="Building__c" object-api-name="Building__c" icon-name="standard:account"  
+          onrecordselection={onBuildingSelection} required></c-lwc-lookup>  
+              </div>
+          </lightning-layout-item>
+      
+          <lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="6" >
+            <div class="custom-box  slds-p-around_small">
+              <template if:true={statusPicklist.data}>
+                <lightning-combobox name="Status" label="Status" required
+                
+                options={statusPicklist.data.values} value={getFlatRecord.status__c} onchange={handleStatusChange}>
+                
+            </lightning-combobox>
+            </template>
+            </div>
+        </lightning-layout-item>
+      <lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="6" >
+            <div class="custom-box  slds-p-around_small">
+              <template if:true={bhkPicklist.data}>
+                <lightning-combobox name="BHK" label="BHK" required
+                
+                options={bhkPicklist.data.values} value={getFlatRecord.BHK__c} onchange={handleBHKChange}>
+                
+            </lightning-combobox>
+            </template>
+            </div>
+        </lightning-layout-item>
+        </lightning-layout>
+        
+
+
+          <lightning-button variant="brand" label="Create Flat" title="Primary action" onclick={handleflatSave} class="slds-m-left_x-small slds-align_absolute-center"></lightning-button>
+
+      </div>  
+
+  </div>
+
+
+
+     </lightning-card>
+</template>

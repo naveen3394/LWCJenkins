@@ -1,0 +1,116 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-14-2021
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+  Modifications Log 
+  Ver   Date         Author                               Modification
+  1.0   04-14-2021   ChangeMeIn@UserSettingsUnder.SFDoc   Initial Version
+-->
+<template>
+    <!-- call th e product tile  -->
+
+
+
+
+        <lightning-card  variant="Narrow"  iorder-name="standard:account">
+<lightning-layout vertical-align="center" >
+                <lightning-layout-item flexibility="auto"  size="12" small-device-size="6" medium-device-size="3" large-device-size="3"  >
+                   <div class="slds-p-top_x-small">
+ <lightning-button label="Previous" icon-name="utility:chevronleft" onclick={previousHandler} class="slds-align_absolute-center">
+                    </lightning-button></div>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto"  size="12" small-device-size="6" medium-device-size="6" large-device-size="6"  >
+                    <!-- Page {page} of {totalPage} -->
+                    <div class="slds-p-bottom_x-small">
+<lightning-layout>
+                <lightning-layout-item  class="slds-p-horizontal_xx-small" flexibility="auto"  size="12" small-device-size="6" medium-device-size="6" large-device-size="6"  >
+                
+<lightning-input type="text" onchange={handleKeyChange}  placeholder="Search by Product Name Here..." value={searchKey}></lightning-input>
+                </lightning-layout-item>
+                        <lightning-layout-item class="slds-p-horizontal_xx-small" flexibility="auto"  size="12" small-device-size="6" medium-device-size="6" large-device-size="6"  >
+        
+<lightning-input type="text" onchange={handleProductCodeChange}  placeholder="Search by Product Code Here..." value={searchCode}></lightning-input>
+            </lightning-layout-item>
+
+</lightning-layout>
+</div>
+
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto"  size="12" small-device-size="6" medium-device-size="3" large-device-size="3"  >
+                                     <div class="slds-p-top_x-small">
+  <lightning-button label="Next" icon-name="utility:chevronright" icon-position="right"
+                        onclick={nextHandler} class="slds-align_absolute-center">
+                        </lightning-button></div>
+                </lightning-layout-item>
+            </lightning-layout>
+          
+
+<table class="slds-table slds-table_cell-buffer lwsTablePad slds-table_bordered" border="1"    style="border-collapse:collapse;">
+          <thead>
+            <tr class="slds-line-height_reset ">
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-align_center slds-text-title_bold slds-text-heading_medium" title="Image">Image </div>
+    
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-align_center slds-text-title_bold slds-text-heading_medium" title="Product">Product</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-align_center slds-text-title_bold slds-text-heading_medium" title="Account Name">Unit Price(<span>₹</span>)</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-align_center slds-text-title_bold slds-text-heading_medium" title="Order Start Date">Available Qty</div>
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-align_center slds-text-title_bold slds-text-heading_medium" title="Items in Cart">Quantity </div>
+                
+                </th>
+                <th class="" scope="col">
+                    <div class="slds-truncate slds-text-align_center slds-text-title_bold slds-text-heading_medium" title="Action">Action</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <template if:true={productList}>
+            <template for:each={productList} for:item="product" for:index="index">
+                <tr key={product.Product2Id}>
+                   
+                    <td scope="col" >
+                       <div class="slds-text-align_center">  <img src={product.Product2.DisplayUrl} alt="prod image" width="60" height="60">
+                       <figcaption class="">
+                    <span class="slds-align_absolute-center"  title="Image Title">{product.Product2.ProductCode}</span>
+                </figcaption>
+                       
+                       
+                  </div>
+                    </td>
+                  
+                    <td scope="col">
+                            <div class="slds-text-align_center">{product.Product2.Name}</div> 
+                    </td>
+                    <td scope="col">
+                        <div class="slds-text-align_center" > <span>₹</span>{product.UnitPrice} </div>
+                    </td>
+                    <td scope="col">
+                        <div class="slds-text-align_center" >{product.Product2.Available_Quantity__c}</div>
+                    </td>
+                    <td scope="col" class="slds-p-bottom_x-small" >
+                        <div class="slds-text-align_center"><lightning-input type="number" max={product.Product2.Available_Quantity__c}
+                        message-when-too-long="quantity value should be less or equal to Available Qty"
+                         onchange={handleQuantityChange} name={index}></lightning-input></div>
+                    </td>
+                    <td scope="col">
+                        <div class="slds-text-align_center"> <lightning-button variant="brand" label="Add to Cart" name={index} onclick={handleAddToCart}> </lightning-button></div>
+                    </td>
+                </tr>
+            </template>
+        </template>
+        </tbody>
+    </table>  
+
+        </lightning-card>
+
+ 
+</template>

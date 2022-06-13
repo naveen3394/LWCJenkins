@@ -1,0 +1,127 @@
+<!--
+   @description       : 
+   @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+   @group             : 
+   @last modified on  : 04-12-2021
+   @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+   Modifications Log 
+   Ver   Date         Author                               Modification
+   1.0   04-06-2021   ChangeMeIn@UserSettingsUnder.SFDoc   Initial Version
+   -->
+  
+   <template>
+
+    <lightning-card  variant="Narrow"  title="Gadgets Shopping Center " iorder-name="standard:account">
+        <template if:true={showOptionsHomePage}>
+            <p class="textcenter">
+
+          <b>Choose Order :</b> 
+          <lightning-button variant="brand" label="Existing" title="Primary action" onclick={openOrderList} class="slds-m-left_x-small"></lightning-button>
+          <lightning-button label="New" title="Non-primary action" onclick={createNewOrder} class="slds-m-left_x-small"></lightning-button>
+           </p>  
+       </template>
+    </lightning-card>
+
+
+
+    <!-- ORDER LIST  -->
+    <template if:true={showExistingOrders} >
+
+    <lightning-card  variant="Narrow" title="Existing Orders" >
+        <div>
+         <p class="textcenter slds-p-vertical_x-small">
+            <lightning-button variant="brand" label="Open Selected Order" title="Primary action" onclick={openSelectedOrder} disabled={controlButton} class="slds-m-left_x-small  "></lightning-button>
+        </p>
+    </div>   
+       <template if:true={orderListData}>
+             <div style="height: auto;">
+                <lightning-datatable data={orderListData} columns={columns} key-field="id"  onrowselection={handleRowSelection} max-rows-selection="1"></lightning-datatable>
+             </div>
+          <!-- 
+             <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                 <thead>
+                     <tr class="slds-line-height_reset">
+                         <th class="" scope="col">
+                             <div class="slds-truncate" title="Select Order">Select Order </div>
+             
+                         </th>
+                         <th class="" scope="col">
+                             <div class="slds-truncate" title="Order Number">Order Number</div>
+                         </th>
+                         <th class="" scope="col">
+                             <div class="slds-truncate" title="Account Name">Account Name</div>
+                         </th>
+                         <th class="" scope="col">
+                             <div class="slds-truncate" title="Order Start Date">Order Start Date</div>
+                         </th>
+                         <th class="" scope="col">
+                             <div class="slds-truncate" title="Items in Cart">Items in Cart</div>
+                         </th>
+                         <th class="" scope="col">
+                             <div class="slds-truncate" title="Order Amount">Order Amount</div>
+                         </th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <template for:each={orderListData} for:item="order">
+                         <tr key={order.Id}>
+                             <th scope="col">
+                                 <div>
+                                     <lightning-radio-group name="radioGroup"
+                                     options={options}
+                                     value={order.id}
+                                     onchange={radioButtonChange}
+                                     type="radio"></lightning-radio-group>
+                                 </div>
+                             </th>
+                             <th scope="col">
+                                 <div>{order.OrderNumber}</div>
+                             </th>
+                             <th scope="col">
+                                 <div>{order.Account.Name}</div>
+                             </th>
+                             <th scope="col">
+                                 <div>{order.EffectiveDate}</div>
+                             </th>
+                             <th scope="col">
+                                 <div>{order.Items_In_Cart__c} </div>
+                             </th>
+                             <th scope="col">
+                                 <div>{order.TotalAmount} </div>
+                             </th>
+                         </tr>
+                     </template>
+                 </tbody>
+             </table> -->
+       </template>
+    </lightning-card>
+</template>
+
+<template if:true={showCreateNewOrder}>
+    <c-create-new-order></c-create-new-order>
+</template>
+
+
+<template if:true={showDetailorder}>
+<lightning-layout multiple-rows>
+    <lightning-layout-item size="12" padding="around-small" small-device-size="3" medium-device-size="7" large-device-size="7" >
+
+<c-show-order-cart openorderid={openorderid} >
+</c-show-order-cart>
+
+    </lightning-layout-item>
+    <lightning-layout-item size="12" padding="around-small" small-device-size="3" medium-device-size="5" large-device-size="5">
+
+<c-show-order-summary openorderid={openorderid} >
+</c-show-order-summary>
+    </lightning-layout-item>
+        <lightning-layout-item size="12" padding="around-small">
+
+   <c-show-all-products openorderid={openorderid} ></c-show-all-products>
+    </lightning-layout-item>
+
+</lightning-layout>
+
+</template>
+
+ </template>

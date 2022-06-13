@@ -1,0 +1,14 @@
+.my-custom-styles {
+    padding: var(--lwc-spacingMedium); /* --lwc-spacingMedium: 16px; */
+    height: var(--lwc-heightHeader);
+    background-color: var(--lwc-colorTextInverse);
+
+}
+.my-font-style{
+  font-size: var(--lwc-varfontSize11);  
+  color: var(--lwc-colorTextError);
+  /* fontSize11 */
+}
+.my-box-style{
+    border-radius: var(--lwc-borderRadiusLarge);
+}
