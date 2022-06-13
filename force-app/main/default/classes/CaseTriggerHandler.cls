@@ -7,6 +7,8 @@
 **/
 public class CaseTriggerHandler {
     //this is a test comment
+    //this is test comment 2
+    //test comment branch 2
     public static void afterInsert(Map<Id,Case> caseMap ){
         CaseTriggerHelper.manageTimeline(caseMap, null);
     }
