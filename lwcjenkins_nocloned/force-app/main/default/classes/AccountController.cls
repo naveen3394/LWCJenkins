@@ -1,3 +1,10 @@
+/**
+ * @description       : 
+ * @author            : navin.patil@rupeek.com
+ * @group             : 
+ * @last modified on  : 06-13-2022
+ * @last modified by  : navin.patil@rupeek.com
+**/
 public with sharing class AccountController {
     @AuraEnabled(cacheable=true)
     public static List<Account> getAccountList() {
